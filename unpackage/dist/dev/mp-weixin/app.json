@@ -50,5 +50,10 @@
       }
     ]
   },
+  "requiredPrivateInfos": [
+    "getFuzzyLocation",
+    "chooseLocation",
+    "chooseAddress"
+  ],
   "usingComponents": {}
 }

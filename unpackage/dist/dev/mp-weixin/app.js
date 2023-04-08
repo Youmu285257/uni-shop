@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
+const store_store = require("./store/store.js");
+require("./store/cart.js");
+require("./store/user.js");
 if (!Math) {
   "./pages/home/home.js";
   "./pages/cate/cate.js";
@@ -42,6 +45,7 @@ common_vendor.index.$showMsg = function(title = "数据请求失败！", duratio
 };
 function createApp() {
   const app = common_vendor.createSSRApp(App);
+  app.use(store_store.store);
   return {
     app
   };

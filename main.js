@@ -16,6 +16,7 @@ app.$mount()
 // #ifdef VUE3
 import { createSSRApp } from 'vue'
 import App from './App.vue'
+import store from '@/store/store.js'
 // 导入网络请求的包
 import { $http } from '@escook/request-miniprogram'
 uni.$http = $http
@@ -44,6 +45,7 @@ uni.$showMsg = function(title = '数据请求失败！', duration = 1500) {
 
 export function createApp() {
   const app = createSSRApp(App)
+  app.use(store)
   return {
     app
   }
